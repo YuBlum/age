@@ -1,0 +1,27 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "./engine/include/",
+      "-I",
+      "./game/include/",
+      "-I",
+      "/usr/include/GLFW/",
+      "-I",
+      "/usr/include/AL/",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g",
+      "-c",
+      "-DLINUX",
+      "-o",
+      "bin/linux/os.o",
+      "engine/src/os.c"
+    ],
+    "directory": "/home/blum/dev/moonlib/dev",
+    "file": "/home/blum/dev/moonlib/dev/engine/src/os.c",
+    "output": "/home/blum/dev/moonlib/dev/bin/linux/os.o"
+  }
+]
