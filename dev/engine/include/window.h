@@ -7,9 +7,11 @@ struct winconfig {
   i8  *name;       /* default: "game" */
   u32  width;      /* default: 640    */
   u32  height;     /* default: 320    */
-  u32  scale;      /* default: 1      */
+  f32  scale;      /* default: 1      */
   b8   resizable;  /* default: 0      */
   b8   fullscreen; /* default: 0      */
 };
+
+void window_force_close(void);
 
 #endif/*__WINDOW_H__*/

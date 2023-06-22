@@ -7,14 +7,14 @@ LIBS_WINDOWS=-lm -lgdi32 -lmingwex -lwinmm
 FLAGS_WINDOWS=-I ./engine/include/ -I ./game/include/ -I /usr/include/GLFW/ -I /usr/include/AL/ -I /usr/x86_64-w64-mingw32/include -m64 -mwindows
 CENGINE=$(wildcard engine/src/*.c )
 CGAME=$(wildcard game/src/*.c )
-OBJS_ENGINE_LINUX=$(patsubst engine/src/%.c, bin/linux/%.o, $(CENGINE)) 
-OBJS_ENGINE_WINDOWS=$(patsubst engine/src/%.c, bin/windows/%.o, $(CENGINE))
-DEPS_ENGINE_LINUX=$(patsubst engine/src/%.c, bin/linux/%.d, $(CENGINE))
-DEPS_ENGINE_WINDOWS=$(patsubst engine/src/%.c, bin/windows/%.d, $(CENGINE))
-OBJS_GAME_LINUX=$(patsubst game/src/%.c, bin/linux/%.o, $(CGAME)) 
-OBJS_GAME_WINDOWS=$(patsubst game/src/%.c, bin/windows/%.o, $(CGAME))
-DEPS_GAME_LINUX=$(patsubst game/src/%.c, bin/linux/%.d, $(CGAME))
-DEPS_GAME_WINDOWS=$(patsubst game/src/%.c, bin/windows/%.d, $(CGAME))
+OBJS_ENGINE_LINUX=$(patsubst engine/src/%.c, bin/linux/engine/%.o, $(CENGINE)) 
+OBJS_ENGINE_WINDOWS=$(patsubst engine/src/%.c, bin/windows/engine/%.o, $(CENGINE))
+DEPS_ENGINE_LINUX=$(patsubst engine/src/%.c, bin/linux/engine/%.d, $(CENGINE))
+DEPS_ENGINE_WINDOWS=$(patsubst engine/src/%.c, bin/windows/engine/%.d, $(CENGINE))
+OBJS_GAME_LINUX=$(patsubst game/src/%.c, bin/linux/game/%.o, $(CGAME)) 
+OBJS_GAME_WINDOWS=$(patsubst game/src/%.c, bin/windows/game/%.o, $(CGAME))
+DEPS_GAME_LINUX=$(patsubst game/src/%.c, bin/linux/game/%.d, $(CGAME))
+DEPS_GAME_WINDOWS=$(patsubst game/src/%.c, bin/windows/game/%.d, $(CGAME))
 MODE=DEVELOPMENT
 
 ifeq ($(MODE), DEVELOPMENT)
@@ -50,19 +50,19 @@ bin/windows/$(EXE).exe: $(OBJS_ENGINE_WINDOWS) $(OBJS_GAME_WINDOWS)
 -include $(DEPS_ENGINE_LINUX)
 -include $(DEPS_GAME_LINUX)
 
-bin/linux/%.o: engine/src/%.c
+bin/linux/engine/%.o: engine/src/%.c
 	@echo compiling $< with gcc...
 	@$(CC_LINUX) $(FLAGS_LINUX) -MMD -c -DLINUX $< -o $@
 
-bin/linux/%.o: game/src/%.c
+bin/linux/game/%.o: game/src/%.c
 	@echo compiling $< with gcc...
 	@$(CC_LINUX) $(FLAGS_LINUX) -MMD -c -DLINUX $< -o $@
 
-bin/windows/%.o: engine/src/%.c
+bin/windows/engine/%.o: engine/src/%.c
 	@echo compiling $< with mingw...
 	@$(CC_WINDOWS) $(FLAGS_WINDOWS) -MMD -c -DWINDOWS $< -o $@
 
-bin/windows/%.o: game/src/%.c
+bin/windows/game/%.o: game/src/%.c
 	@echo compiling $< with mingw...
 	@$(CC_WINDOWS) $(FLAGS_WINDOWS) -MMD -c -DWINDOWS $< -o $@
 

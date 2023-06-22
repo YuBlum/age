@@ -1,0 +1,17 @@
+## Moonlib TODO list
+- [ ] Window
+    - [x] Opening window
+    - [ ] Fullscreen
+- [ ] Renderer
+    - [ ] Kind of a shader loader, lexer and compiler
+    - [ ] Load aseprite image files
+    - [ ] Convert individual images into an atlas
+    - [ ] Framebuffer
+    - [ ] Text rendering
+- [ ] UI
+- [ ] Input
+    - [x] Keyboard
+    - [ ] Mouse position
+    - [ ] Mouse button
+    - [ ] Clipboard
+- [ ] ECS (or some other thing for handling entities)

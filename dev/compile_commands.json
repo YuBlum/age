@@ -17,11 +17,11 @@
       "-c",
       "-DLINUX",
       "-o",
-      "bin/linux/os.o",
-      "engine/src/os.c"
+      "bin/linux/engine/window.o",
+      "engine/src/window.c"
     ],
     "directory": "/home/blum/dev/moonlib/dev",
-    "file": "/home/blum/dev/moonlib/dev/engine/src/os.c",
-    "output": "/home/blum/dev/moonlib/dev/bin/linux/os.o"
+    "file": "/home/blum/dev/moonlib/dev/engine/src/window.c",
+    "output": "/home/blum/dev/moonlib/dev/bin/linux/engine/window.o"
   }
 ]

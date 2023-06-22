@@ -28,7 +28,7 @@ crash(const i8 *format, ...) {
   exit(1);
 }
 
-void
+static void
 resource_path_init(void) {
   if (!init_abs_path) return;
   i64 len = readlink("/proc/self/exe", abs_path, MAX_PATH);

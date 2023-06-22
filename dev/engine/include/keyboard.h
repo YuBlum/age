@@ -1,0 +1,77 @@
+#ifndef __KEYBOARD_H__
+#define __KEYBOARD_H__
+
+#include "types.h"
+
+struct key {
+  b8 down;
+  b8 up;
+  b8 click;
+};
+
+enum keys {
+  KEY_ESCAPE = 0,
+  KEY_ENTER,
+  KEY_TAB,
+  KEY_BACKSPACE,
+  KEY_INSERT,
+  KEY_DELETE,
+  KEY_RIGHT,
+  KEY_LEFT,
+  KEY_UP,
+  KEY_DOWN,
+  KEY_PAGE_UP,
+  KEY_PAGE_DOWN,
+  KEY_HOME,
+  KEY_END,
+  KEY_CAPS_LOCK,
+  KEY_SCROLL_LOCK,
+  KEY_NUM_LOCK,
+  KEY_PRINT_SCREEN,
+  KEY_PAUSE,
+  KEY_F1,
+  KEY_F2,
+  KEY_F3,
+  KEY_F4,
+  KEY_F5,
+  KEY_F6,
+  KEY_F7,
+  KEY_F8,
+  KEY_F9,
+  KEY_F10,
+  KEY_F11,
+  KEY_F12,
+  KEY_PAD_DECIMAL = 33,
+  KEY_PAD_DIVIDE,
+  KEY_PAD_MULTIPLY,
+  KEY_PAD_SUBTRACT,
+  KEY_PAD_ADD,
+  KEY_PAD_ENTER,
+  KEY_PAD_EQUAL = 40,
+  KEY_LEFT_SHIFT,
+  KEY_LEFT_CONTROL,
+  KEY_LEFT_ALT,
+  KEY_LEFT_SUPER = 58,
+  KEY_RIGHT_SHIFT = 60,
+  KEY_RIGHT_CONTROL = 62,
+  KEY_RIGHT_ALT,
+  KEY_RIGHT_SUPER,
+  KEY_WORLD_1 = 94,
+  KEY_WORLD_2,
+  KEY_PAD_0 = 97,
+  KEY_PAD_1,
+  KEY_PAD_2,
+  KEY_PAD_3,
+  KEY_PAD_4,
+  KEY_PAD_5,
+  KEY_PAD_6,
+  KEY_PAD_7,
+  KEY_PAD_8,
+  KEY_PAD_9,
+  KEY_COUNT,
+  KEY_INVALID
+};
+
+struct key keyboard_get(enum keys key);
+
+#endif/*__KEYBOARD_H__*/
