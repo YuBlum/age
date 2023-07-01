@@ -2,27 +2,27 @@
 #include <string.h>
 #include "keyboard.h"
 
-struct internal_key {
+struct age_internal_key {
   b8 prv;
   b8 cur;
 };
 
-static struct internal_key keys[KEY_COUNT];
+static struct age_internal_key keys[AGE_KEY_COUNT];
 
 void
-keyboard_refresh(void) {
-  memset(keys, 0, KEY_COUNT * sizeof (struct internal_key));
+age_keyboard_refresh(void) {
+  memset(keys, 0, AGE_KEY_COUNT * sizeof (struct age_internal_key));
 }
 
-struct internal_key *
-keyboard_reference_key(enum keys key) {
-  if (key > KEY_COUNT) return NULL;
+struct age_internal_key *
+age_internal_keyboard_reference_key(enum age_keys key) {
+  if (key > AGE_KEY_COUNT) return NULL;
   return keys + key;
 }
 
-struct key
-keyboard_get(enum keys key) {
-  return (struct key) {
+struct age_key
+age_keyboard_get(enum age_keys key) {
+  return (struct age_key) {
     .up    = !keys[key].cur,
     .down  =  keys[key].cur,
     .click =  keys[key].cur && !keys[key].prv

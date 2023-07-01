@@ -10,6 +10,8 @@
       "/usr/include/GLFW/",
       "-I",
       "/usr/include/AL/",
+      "-I",
+      "./vendor/include/",
       "-Wall",
       "-Wextra",
       "-Werror",
@@ -17,11 +19,11 @@
       "-c",
       "-DLINUX",
       "-o",
-      "bin/linux/engine/window.o",
-      "engine/src/window.c"
+      "bin/linux/engine/renderer.o",
+      "engine/src/renderer.c"
     ],
-    "directory": "/home/blum/dev/moonlib/dev",
-    "file": "/home/blum/dev/moonlib/dev/engine/src/window.c",
-    "output": "/home/blum/dev/moonlib/dev/bin/linux/engine/window.o"
+    "directory": "/home/blum/dev/bagli/dev",
+    "file": "/home/blum/dev/bagli/dev/engine/src/renderer.c",
+    "output": "/home/blum/dev/bagli/dev/bin/linux/engine/renderer.o"
   }
 ]

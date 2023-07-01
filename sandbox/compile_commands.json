@@ -1,0 +1,15 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-I../dev/engine/include/",
+      "-o",
+      "sandbox",
+      "sandbox.c"
+    ],
+    "directory": "/home/blum/dev/age/sandbox",
+    "file": "/home/blum/dev/age/sandbox/sandbox.c",
+    "output": "/home/blum/dev/age/sandbox/sandbox"
+  }
+]

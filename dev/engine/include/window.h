@@ -3,7 +3,7 @@
 
 #include "types.h"
 
-struct winconfig {
+struct age_conf {
   i8  *name;       /* default: "game" */
   u32  width;      /* default: 640    */
   u32  height;     /* default: 320    */
@@ -12,6 +12,6 @@ struct winconfig {
   b8   fullscreen; /* default: 0      */
 };
 
-void window_force_close(void);
+void age_window_close(void);
 
 #endif/*__WINDOW_H__*/

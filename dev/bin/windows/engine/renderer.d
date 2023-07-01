@@ -1,2 +1,4 @@
 bin/windows/engine/renderer.o: engine/src/renderer.c \
- engine/include/renderer.h engine/include/types.h
+ vendor/include/glad/glad.h vendor/include/KHR/khrplatform.h \
+ engine/include/renderer.h engine/include/types.h engine/include/shader.h \
+ engine/include/simplestr.h engine/include/renderer.h

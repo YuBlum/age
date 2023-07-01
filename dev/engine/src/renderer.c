@@ -1,23 +1,23 @@
-#include <GL/gl.h>
+#include <glad/glad.h>
 #include "renderer.h"
+#include "shader.h"
 
-static struct {
-  void (*clear)(u32);
-  void (*clear_color)(f32, f32, f32, f32);
-} gl;
+extern void age_internal_shaders_end(void);
+extern void age_internal_shaders_begin(void);
 
 void
-renderer_begin(void *(*gl_loader)(const i8 *)) {
-  gl.clear       = gl_loader("glClear");
-  gl.clear_color = gl_loader("glClearColor");
+age_internal_renderer_begin(void *gl_loader) {
+  gladLoadGLLoader(gl_loader);
+  age_internal_shaders_begin();
 }
 
 void
-renderer_update(void) {
-  gl.clear_color(0.8f, 0.1f, 0.1f, 1.0f);
-  gl.clear(GL_COLOR_BUFFER_BIT);
+age_internal_renderer_update(void) {
+  glClearColor(0.8f, 0.1f, 0.1f, 1.0f);
+  glClear(GL_COLOR_BUFFER_BIT);
 }
 
 void
-renderer_end(void) {
+age_internal_renderer_end(void) {
+  age_internal_shaders_end();
 }
